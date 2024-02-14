@@ -1,0 +1,147 @@
+{% extends "blog/services.html" %}
+{% block content %}
+{% load static %}
+{% load leaflet_tags %}
+{% leaflet_js %}
+{% leaflet_css %}
+<h1>Finding The Nearest Health Facility</h1>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css">
+<!-- minimap.css -->
+<link rel="stylesheet" href="{% static 'Leaflet-MiniMap-3.6.1/Leaflet-MiniMap-3.6.1/src/Control.MiniMap.css' %}">
+
+<!-- Leaflet.GroupedLayerControl CSS and JS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.css" />
+<!-- Routing machine -->
+<script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+<!-- Leaflet AJAX JS -->
+<script src="https://unpkg.com/leaflet-ajax/dist/leaflet.ajax.js"></script>
+<!-- groupedLayerControl -->
+<script src="https://unpkg.com/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.js"></script>
+<!-- minimap.js -->
+<script src="{% static 'Leaflet-MiniMap-3.6.1/Leaflet-MiniMap-3.6.1/src/Control.MiniMap.js' %}"></script>
+
+
+<!-- the links for building glyphicons -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<div id="map" style="width: 95%; height: 600px;"></div>
+
+{{ hospitals|json_script:"hospitals_json" }}
+
+<script type="text/javascript">
+    var map = L.map('map').setView([-0.649970, 34.505103], 10);
+    var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+    var routingControl;  // Declare a variable to store the routing control instance
+
+    var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+    var openTopo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png');
+    var esriWorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}');
+
+    var baseLayers = {
+        "OSM": osm,
+        "OpenTopomap": openTopo,
+        "World_Imagery": esriWorldImagery
+    };
+
+    L.control.layers(baseLayers).addTo(map);
+
+    var hospitals = JSON.parse(document.getElementById('hospitals_json').textContent);
+    console.log(hospitals);
+
+    // Check if hospitals is an array before using forEach
+    if (Array.isArray(hospitals)) {
+        hospitals.forEach(hospital => {
+            var marker = L.marker([hospital.latitude, hospital.longitude]).addTo(map);
+
+            // Add a popup with information when marker is clicked
+            marker.bindPopup(
+                `<b>${hospital.facility_n}</b><br>
+                Keph Level: ${hospital.Keph_level}<br>
+                Facility Type: ${hospital.Facility_type}<br>
+                Open Whole Day: ${hospital.Open_whole_day}<br>
+                Open Late Night: ${hospital.Open_late_night}<br>
+                Open Weekends: ${hospital.Open_weekends}<br>
+                Open Public Holidays: ${hospital.Open_public_holidays}`
+            );
+        });
+    }
+
+    // Add the customized icon directly as an HTML element
+    var redIcon = L.divIcon({
+        className: 'custom-div-icon',
+        html: '<div style="background-color: darkgreen; width: 20px; height: 20px; border-radius: 50%;"></div>',
+        iconSize: [20, 20],
+        iconAnchor: [10, 10],
+        popupAnchor: [0, -10]
+    });
+
+    // add a click event to the map
+    map.on("click", (event) => {
+        let lat = event.latlng.lat;
+        let longitude = event.latlng.lng;
+
+        // Remove previous routing control
+        if (routingControl) {
+            map.removeControl(routingControl);
+        }
+
+        // Remove previous markers
+        map.eachLayer(function (layer) {
+            if (layer instanceof L.Marker) {
+                map.removeLayer(layer);
+            }
+        });
+
+        // Add the current marker with the red icon
+        let currentMarker = L.marker([lat, longitude], { icon: redIcon }).addTo(map);
+
+        fetch(`/get-nearest-healthfacility?latitude=${lat}&longitude=${longitude}`)
+            .then(response => response.json())
+            .then(result => {
+                let hospital_coordinates = result.coordinates;
+                let user_coordinates = [lat, longitude];
+
+                // Display a route from user's click to the nearest hospital
+                routingControl = L.Routing.control({
+                    waypoints: [
+                        L.latLng(event.latlng.lat, event.latlng.lng),
+                        L.latLng(result.coordinates[0], result.coordinates[1])
+
+                    ],
+                    lineOptions: {
+                        styles: [{ color: 'red', opacity: 0.9, weight: 5 }]
+                    },
+                    routeWhileDragging: true,  // Show the route while dragging the marker
+                    summaryTemplate: '<strong>{name}</strong><br>{distance}, {time}'
+                }).addTo(map);
+
+                // Check if the current marker is the nearest one
+                if (result.distance === 0) {
+                    currentMarker.setIcon(redIcon);
+                }
+                // Extracting the open_whole_day information from the hospital data
+                var openlate = result.Openlatenight;
+
+                // Add a popup to the current marker with hospital name, distance, and open_whole_day information
+                currentMarker.bindPopup(
+                       `<b>Nearest Hospital</b> is <br>
+                       Facility Name: ${result.facility_n} which is <br>
+                       Distance: ${result.distance.toFixed(2)} km away <br>
+                       Keph Level: ${result.Keph_level}<br>
+                       Facility Type: ${result.Facility_type}<br>
+                       Open Whole Day: ${result.Open_whole_day}<br>
+                       Open Late Night: ${result.Open_late_night}<br>
+                       Open Weekends: ${result.Open_weekends}<br>
+                       Open Public Holidays: ${result.Open_public_holidays}`
+                    ).openPopup();
+            })
+            .catch(error => console.error('Error:', error));
+    });
+</script>
+
+{% leaflet_map "map" %}
+{% endblock content %}

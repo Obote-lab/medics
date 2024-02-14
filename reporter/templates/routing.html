@@ -1,0 +1,207 @@
+{% extends "blog/services.html" %}
+{% block content %}
+{% load leaflet_tags %}
+
+{% load static %}
+<h1>Automatic Routing to the Nearest Health Facility</h1>
+
+<!-- Include Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+<!-- Include Leaflet Routing Machine CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css">
+
+<!-- Include Leaflet Minimap CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.css">
+
+<!-- Include Leaflet.GroupedLayerControl CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.css" />
+
+<!-- Include Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- Include Leaflet JavaScript -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<!-- Include Leaflet Routing Machine JavaScript -->
+<script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+
+<!-- Include Leaflet Minimap JavaScript -->
+<script src="https://unpkg.com/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.js"></script>
+
+<!-- Include Leaflet.GroupedLayerControl JavaScript -->
+<script src="https://unpkg.com/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.js"></script>
+
+<!-- Include jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- Include Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<div id="map" style="width: 100%; height: 800px;"></div>
+
+{{ hospitals|json_script:"hospitals_json" }}
+
+<script type="text/javascript">
+      
+    function isOpenNow(hospital) {
+    var currentDate = new Date();
+    var currentDay = currentDate.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+    var currentHour = currentDate.getHours();
+    console.log(currentDay);
+    console.log(currentHour);
+
+    // Check if the hospital is open whole day
+    if (hospital.Open_whole_day === 'Yes') {
+        return true;
+    }
+
+    // Check if it's late night and within operating hours
+    if (hospital.Open_late_night === 'Yes' && currentHour >= 6 && currentHour <= 23) {
+        return true;
+    }
+
+    // Check if it's weekend and open on weekends
+    if (hospital.Open_weekends === 'Yes' && (currentDay === 0 || currentDay === 6)) {
+        return true;
+    }
+
+    return false;
+}
+
+
+
+    
+      var routingControl;  // Declare a variable to store the routing control instance
+
+      var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+      var openTopo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png');
+      var esriWorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}');
+
+      var baseLayers = {
+         "OSM": osm,
+         "OpenTopomap": openTopo,
+         "World_Imagery": esriWorldImagery
+      };
+
+      var map = L.map('map', {
+            layers: [osm] // Set OpenStreetMap as the default layer
+      }).setView([-0.649970, 34.505103], 10);
+      L.control.layers(baseLayers).addTo(map);
+
+      let hospitals = JSON.parse(document.getElementById('hospitals_json').textContent);
+      console.log(hospitals); 
+
+      hospitals.forEach(hospital => {
+          // Filter hospitals based on opening hours
+          if (isOpenNow(hospital)) {
+              let marker = L.marker([hospital.latitude, hospital.longitude]).addTo(map);
+
+              // Add a popup with information
+              marker.bindPopup(
+                  `<b>${hospital.facility_n}</b><br>
+                  Keph Level: ${hospital.Keph_level}<br>
+                  Facility Type: ${hospital.Facility_type}<br>
+                  Open Whole Day: ${hospital.Open_whole_day}<br>
+                  Open Late Night: ${hospital.Open_late_night}<br>
+                  Open Weekends: ${hospital.Open_weekends}<br>
+                  Open Public Holidays: ${hospital.Open_public_holidays}`
+              );
+          }
+      });
+
+      // Add the customized icon directly as an HTML element
+      var redIcon = L.divIcon({
+         className: 'custom-div-icon',
+         html: '<div style="background-color: darkgreen; width: 20px; height: 20px; border-radius: 50%;"></div>',
+         iconSize: [20, 20],
+         iconAnchor: [10, 10],
+         popupAnchor: [0, -10]
+      });
+
+      // add a click event to the map
+      map.on("click", (event) => {
+      let lat = event.latlng.lat;
+      let longitude = event.latlng.lng;
+
+      // Remove previous routing control
+      if (routingControl) {
+         map.removeControl(routingControl);
+      }
+
+      // Remove previous markers
+      map.eachLayer(function (layer) {
+         if (layer instanceof L.Marker) {
+            map.removeLayer(layer);
+         }
+      });
+
+      // Add the current marker with the red icon
+      let currentMarker = L.marker([lat, longitude], { icon: redIcon }).addTo(map);
+
+      // Check the current time and day
+      let currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      let currentDayOfWeek = new Date().getDay();
+
+      // Display only hospitals that are open based on the current time and day
+      hospitals.forEach(hospital => {
+          if (isOpenNow(hospital)) {
+              // Add a marker for open hospitals
+              let marker = L.marker([hospital.latitude, hospital.longitude]).addTo(map);
+
+              // Add a popup with information
+              marker.bindPopup(
+                  `<b>${hospital.facility_n}</b><br>
+                  Keph Level: ${hospital.Keph_level}<br>
+                  Facility Type: ${hospital.Facility_type}<br>
+                  Open Whole Day: ${hospital.Open_whole_day}<br>
+                  Open Late Night: ${hospital.Open_late_night}<br>
+                  Open Weekends: ${hospital.Open_weekends}<br>
+                  Open Public Holidays: ${hospital.Open_public_holidays}`
+              );
+          }
+      });
+
+      fetch(`/get-nearest-healthfacility?latitude=${lat}&longitude=${longitude}`)
+         .then(response => response.json())
+         .then(result => {
+            let hospital_coordinates = result.coordinates;
+            let user_coordinates = [lat, longitude];
+
+            // Display a route from user's click to the nearest hospital
+            routingControl = L.Routing.control({
+               waypoints: [
+                  L.latLng(event.latlng.lat, event.latlng.lng),
+                  L.latLng(result.coordinates[0], result.coordinates[1])
+               ],
+               lineOptions: {
+                  styles: [{ color: 'red', opacity: 0.9, weight: 5 }]
+               },
+               routeWhileDragging: true,  // Show the route while dragging the marker
+               summaryTemplate: '<strong>{name}</strong><br>{distance}, {time}'
+            }).addTo(map);
+
+            // Check if the current marker is the nearest one
+            if (result.distance === 0) {
+               currentMarker.setIcon(redIcon);
+            }
+
+            // Add a popup to the current marker with hospital name, distance, and open_whole_day information
+            currentMarker.bindPopup(
+               `<b>Nearest Hospital</b><br>
+               Distance: ${result.distance.toFixed(2)} km<br>
+               Facility Name: ${result.facility_n}<br>
+               Keph Level: ${result.Keph_level}<br>
+               Facility Type: ${result.Facility_type}<br>
+               Open Whole Day: ${result.Open_whole_day}<br>
+               Open Late Night: ${result.Open_late_night}<br>
+               Open Weekends: ${result.Open_weekends}<br>
+               Open Public Holidays: ${result.Open_public_holidays}`
+            ).openPopup();
+         })
+         .catch(error => console.error('Error:', error));
+   });
+</script>
+
+   <!-- {% leaflet_map "map" %} -->
+{% endblock content %}

@@ -1,0 +1,62 @@
+{% extends 'blog/services.html'%}
+{% block content %}
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+
+   <div class="container-fluid">
+      <h1>Direct paths to the Nearst Health Facility</h1>
+      <div id="map" style="width: 100%;height:850px;"></div>
+
+      {{ hosis|json_script:"hosi_json" }}
+
+      <script >
+         var map = L.map('map').setView([-0.533, 34.50], 10);
+
+
+         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+         }).addTo(map);
+
+
+         let hosis = JSON.parse(document.getElementById('hosi_json').textContent)
+
+         // adding a marker for each Hospital
+         hosis.forEach(hospital =>{
+            L.marker([hospital.latitude, hospital.longitude]).addTo(map)
+         });
+
+
+
+         map.on('click', (event) => {
+          let latitude = event.latlng.lat;
+          let longitude = event.latlng.lng;
+          L.marker([latitude, longitude]).addTo(map);
+
+    // fetching the nearest hospital from the clicked point on the map
+    fetch(`/get-nearest-hosi?latitude=${latitude}&longitude=${longitude}`)
+        .then(response => response.json())
+        .then(result => {
+            let hosi_coordinates = result.coordinates;
+            let user_coordinates = [latitude, longitude];
+
+            // Combine user's and hospital's coordinates for polyline
+            let polyline_coordinates = [user_coordinates, hosi_coordinates];
+
+            // Create polyline and add to map
+            let polyline = L.polyline(polyline_coordinates).addTo(map);
+        });
+   });
+
+
+      </script>
+
+   </div>
+{% endblock content %}

@@ -1,0 +1,88 @@
+{% extends "blog/services.html" %}
+{% block content %}
+   {% load leaflet_tags %}
+   {% leaflet_js %}
+   {% leaflet_css %}
+
+   <!-- Leaflet.Markercluster CSS -->
+   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+
+   <!-- Leaflet.GroupedLayerControl CSS and JS -->
+   <link rel="stylesheet" href="https://unpkg.com/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.css" />
+
+   <!-- Leaflet.Markercluster JS -->
+   <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+
+   <!-- Leaflet AJAX JS -->
+   <script type="text/javascript" src="https://unpkg.com/leaflet-ajax/dist/leaflet.ajax.js"></script>
+
+   <script src="https://unpkg.com/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.js"></script>
+
+
+   <!-- the links for building glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    
+   
+   <h2>Homa Bay Health Facilities Distribution</h2>
+   <div id="map" style="width: 100%; height: 85%;"></div>
+
+   <script type="text/javascript">
+      function initializeMap(map, options) {
+         var centerCoordinates = [-0.649970, 34.543103];
+         var initialZoomLevel = 9.5;
+         map.setView(centerCoordinates, initialZoomLevel);
+
+         var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+         var openTopo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png');
+         var esriWorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}');
+
+         // Create a marker cluster group
+         var markers = L.markerClusterGroup();
+
+         var hbhosp_dat = new L.GeoJSON.AJAX("{% url 'Hb_Hosp' %}", {
+            onEachFeature: function (feature, layer) {
+               var popupContent = "<b>Facility Name:</b> " + feature.properties.facility_n;
+               layer.bindPopup(popupContent);
+               markers.addLayer(layer);
+            },
+            pointToLayer: function (feature, latlng) {
+               return L.marker(latlng);
+            }
+         });
+
+         // Add the marker cluster group to the map
+         map.addLayer(markers);
+
+         var hbcounty_dat = new L.GeoJSON.AJAX("{% url 'Hb_County' %}", {
+            onEachFeature: function (feature, layer) {
+               layer.bindPopup(feature.properties.counties.toString());
+            }
+         });
+
+         hbcounty_dat.addTo(map);
+
+         var baseLayers = {
+            "OSM": osm,
+            "OpenTopomap": openTopo,
+            "World_Imagery": esriWorldImagery
+         };
+
+         var groupedOverlays = {
+            "Layers": {
+               "Homa-Bay County": hbcounty_dat,
+               "Health Facilities": markers,  // Use the marker cluster group
+            }
+         };
+
+         L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
+      }
+   </script>
+
+   {% leaflet_map "map" callback="initializeMap" %}
+
+{% endblock content %}
+

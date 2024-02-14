@@ -1,0 +1,244 @@
+object_id,facility_n,categories,owner,county,sub_county,division,location,sub_location,constituency,nearest_to,latitude,longitude
+59,Adiedo Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,East Karachuonyo,West Kanyaluo,Komwoyo,KARACHUONYO,Adiedo Market,-0.42727,34.60247
+94,Afya Health System Hospital,Sub-District Hospital,Private Practice - General Practitioner,Homa Bay,Homa Bay,Asego,Town,Township,RANGWE,Homa Bay Town,-0.53,34.46
+146,Agakhan Kisii,Medical Clinic,Private Enterprise (Institution),Kisii,Kisii Central,Mosocho,Mwamosioma,Township,KITUTU CHACHE,Kisii Municipal Mkt,-0.4047,34.46258
+149,Agawo Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo South,Kasipul,East Kamagak,Kachieng,KASIPUL/KABONDO,Sikri,-0.46748,34.7874
+194,Akado Dispensary,Dispensary,Private Practice - Nurse / Midwife,Homa Bay,Mbita,Mbita,Gembe West,Mbita Township,MBITA,Mbita,-0.44261,34.22513
+278,Alum Beach Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,West Karachuonyo,West Kadhimu,Kayoo West,KARACHUONYO,Kandiege Market,-0.44673,34.48747
+305,Amatierio Dispensary,Health Centre,Ministry of Health,Nyamira,Borabu,Ekerenyo,Kiabonyoru,Mokomoni,NORTH MUGIRANGO,Nyaramba,-0.47118,34.94123
+315,Amoyo Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,Nyarongi,Central Kanyadoto,Kaganda South,NDHIWA,Riat,-0.82297,34.35597
+338,Ang'iya Dispensary,Dispensary,Ministry of Health,Homa Bay,Mbita,Mbita,Gembe West,Kasgunga East,MBITA,Luanda,-0.45775,34.27647
+428,Asumbi Annex Dispensary,Medical Clinic,Kenya Episcopal Conference-Catholic Secretariat,Homa Bay,Homa Bay,Asego,East Kanyada,Kalanya,RANGWE,Rodi Market,-0.6246,34.50363
+429,Asumbi Health Centre,Health Centre,Kenya Episcopal Conference-Catholic Secretariat,Homa Bay,Homa Bay,Rangwe,Central Gem,Kajulu,RANGWE,Rangwe,-0.62079,34.61453
+430,Asumbi Teachers Training College,Medical Clinic,Private Practice - Nurse / Midwife,Homa Bay,Homa Bay,West Gem,Kajulu,,RANGWE,Asumbi,-0.6018,34.23737
+433,Atemo Health Centre,Health Centre,Christian Health Association of Kenya,Homa Bay,Rachuonyo South,Kasipul,Kojwach,Kamuga,KASIPUL/KABONDO,Ringa Market,-0.503,34.83291
+614,Benrose Clinic,Medical Clinic,Private Enterprise (Institution),Homa Bay,Homa Bay,Asego,East-Kanyada,Kanyango/Kalanya,RANGWE,Rodi Kopany,-0.6248,34.50197
+734,Bora Bora Clinic,Medical Clinic,Private Enterprise (Institution),Homa Bay,Ndhiwa,Ndhiwa,West Kanyamwa,Kayambo,NDHIWA,Ndhiwa,-0.73072,34.36853
+754,Bouti Dispensary,Dispensary,Ministry of Health,Kisii,Kisii Central,Mosocho,Mwamosioma,Bouti,KITUTU CHACHE,Daraja Mbili,-0.3959,34.4606
+1191,Chuowe Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,East Karachuonyo,Wangchieng,Kobala,KARACHUONYO,Miriu Market,-0.32141,34.77078
+1195,Chuthber Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,East Karachuonyo,Rambira,Karabondi,KARACHUONYO,Chuthber Market,-0.39885,34.72371
+1223,Community Action for Rural Developement  VCT,VCT Centre (Stand-Alone),Non-Governmental Organizations,Homa Bay,Homa Bay,Ndhiwa,West Kanyamwa,Upper Kayambo,NDHIWA,Ndhiwa,-0.73243,34.36419
+1372,"Devlink Africa VCT, Mbita",VCT Centre (Stand-Alone),Non-Governmental Organizations,Homa Bay,Mbita,Mbita,Gembe West,Township,MBITA,Mbita,-0.42698,34.20936
+1402,Doctors Worldwide Tembo Medical Centre,Medical Clinic,Non-Governmental Organizations,Migori,Nyatike,Muhuru,Muhuru Bay,Sumba,NYATIKE,Nyang'wina,-0.989928,34.095623
+1443,Dr Eshtera Clinic,Medical Clinic,Private Practice - General Practitioner,Homa Bay,Homa Bay,Asego,Homa bay Town,Homa bay Town,RANGWE,Homa bay,-0.53032,34.45688
+1678,Ekialo Kiano VCT,VCT Centre (Stand-Alone),Non-Governmental Organizations,Homa Bay,Mbita,Mfangano,Mfangano East,Wakinga,MBITA,Kitawi Beach,-0.49119,34.03444
+1869,Esianyi Dispensary,Dispensary,Ministry of Health,Nyamira,Nyamira North,Nyamusi,Borangi,Bonyengwe Ii,NORTH MUGIRANGO,Nyambambo,-0.47118,34.94123
+2180,Gethsemane Garden Mission Hospital,VCT Centre (Stand-Alone),Non-Governmental Organizations,Homa Bay,Mbita,Mfangano,Mfangano North,Waware,MBITA,Wakiangata,-0.46484,34.06335
+2305,GK Prison Dispensary (Homa Bay),Dispensary,Ministry of Health,Homa Bay,Homa Bay,Asego,Homa-Bay,Homa Bay Township,RANGWE,Homa-Bay,-0.53018,34.46596
+2352,Godber Dispensary,Health Centre,Ministry of Health,Homa Bay,Rachuonyo South,Kasipul,Kakello,Kakello Dudi,KASIPUL/KABONDO,Gamba Market,-0.52323,34.79431
+2353,Godbura Health Centre,Health Centre,Ministry of Health,Homa Bay,Suba,Gwassi,Gwassi Central,Nyancha,GWASI,Nyandiwa,-0.7223,34.08519
+2367,Gongo Dispensary,Dispensary,Community,Homa Bay,Homa Bay,Rangwe,Gongo,Gongo,RANGWE,Ndhiwa,-0.52814,34.62109
+2381,Good Shepherd Ang'iya,Dispensary,Kenya Episcopal Conference-Catholic Secretariat,Homa Bay,Ndhiwa,Riana,,,NDHIWA,Lwanda Kawuor,-0.7341,34.52251
+2396,Got Kamondi Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo South,Kabondo,Kawuor,Miriu,KASIPUL/KABONDO,Wang'apala Secondary School,-0.42111,34.91194
+2397,Got Kojowi Health Centre,Health Centre,Ministry of Health,Homa Bay,Ndhiwa,Kobama,West Kobwae,Kasirime,NDHIWA,Ratanga,-0.74146,34.26536
+2400,Got Oyaro Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,West Karachuonyo,Kokoth Katenga,Koyumbre,KARACHUONYO,Pala Market,-0.39452,34.53262
+2553,Holy Family Oriang Mission Dispensary,Dispensary,Kenya Episcopal Conference-Catholic Secretariat,Homa Bay,Rachuonyo South,Kabondo,Kawuor,Kodhoch,KASIPUL/KABONDO,Misambi Market,-0.44541,34.92139
+2557,Homa Bay Central Widows VCT,VCT Centre (Stand-Alone),Private Practice - Nurse / Midwife,Homa Bay,Homa Bay,Asego,Homa bay Town,Homa Bay Town,RANGWE,Sofia,-0.54025,34.45585
+2558,Homa Bay Community Medical Clinic,Medical Clinic,Private Practice - Clinical Officer,Homa Bay,Homa Bay,Asego,Homa bay Town,Arujo,RANGWE,Homa bay Town,-0.53058,34.45572
+2559,Homa Bay County Teaching and Referral Hospital,District Hospital,Ministry of Health,Homa Bay,Homa Bay,Asego,Homa-Bay,Homa Bay Township,RANGWE,Homa-Bay,-0.53325,34.46121
+2560,Homa Clinic,Medical Clinic,Private Enterprise (Institution),Homa Bay,Homa Bay,Asego,Homa-Bay Town,Township,RANGWE,Homa-Bay,-0.53108,34.45724
+2561,Homa Hills Health Centre,Health Centre,Non-Governmental Organizations,Homa Bay,Rachuonyo North,West Karachuonyo,Kanam B,Kanyango,KARACHUONYO,Doho Market,-0.35379,34.46834
+2562,Homa Lime Health Centre,Health Centre,Ministry of Health,Homa Bay,Rachuonyo North,West Karachuonyo,West Kadhimu,Koguta,KARACHUONYO,Doho Market,-0.43037,34.55277
+2563,Homabay County Beyond Zero Mobile Clinic,Dispensary,Ministry of Health,Homa Bay,Homa Bay,TownShip,Township,Township,RANGWE,Homabay Town,-0.53325,34.46121
+2572,Hope Compassionate (ACK) Dispensary,Dispensary,Christian Health Association of Kenya,Homa Bay,Homa Bay,Asego,Homa Bay Town,Asego,RANGWE,Homa Bay town,-0.53423,34.46021
+2792,Integrated Development Fund (IDF) VCT,VCT Centre (Stand-Alone),Non-Governmental Organizations,Homa Bay,Rachuonyo South,Kabondo,Kasewe,"Kasewe ""B""",KASIPUL/KABONDO,Kadongo Market,-0.44715,34.88965
+2794,International Medical Corps Mobile VCT (Mbita),VCT Centre (Stand-Alone),Non-Governmental Organizations,Homa Bay,Mbita,Mbita,Gembe West,Mbita Township,MBITA,Mbita,-0.43307,34.20608
+2795,International Medical Corps Tekelza DiCE Kisii,Medical Clinic,Non-Governmental Organizations,Kisii,Kisii Central,Municipality,Municipality,Mwamosioma,KITUTU CHACHE,Kisii Municipality Market,-0.40456,34.46345
+2946,Janeiro Nursing Home,Medical Clinic,Private Practice - Clinical Officer,Homa Bay,Homa Bay,Rangwe,East Kochia,Kamenya,RANGWE,Homabay,-0.5483,34.507
+2952,Jawabu (Community) Medical Clinic,Medical Clinic,Private Enterprise (Institution),Homa Bay,Rachuonyo South,Kabondo,Kasewe,Kasewe B,KASIPUL/KABONDO,Kadongo Market,-0.44757,34.89305
+2994,Johpas Clinic,Nursing Home,Private Enterprise (Institution),Homa Bay,Homa Bay,Rangwe,Central Gem,Kajulu,RANGWE,Rangwe,-0.6256,34.62249
+3105,Kabondo Sub-District Hospital,Sub-District Hospital,Ministry of Health,Homa Bay,Rachuonyo South,Kabondo,Kodhoch West,Upper Kodhoch West,KASIPUL/KABONDO,Kadongo Market,-0.42077,34.87435
+3137,Kadhola Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,Kobama,,,NDHIWA,,-0.81123,34.28983
+3151,Kageno Dispensary,Dispensary,Community,Homa Bay,Mbita,Mbita,Rusinga West,Wanyama,MBITA,Rusinga,-0.45775,34.27647
+3152,Kager Dispensary,Dispensary,Non-Governmental Organizations,Homa Bay,Homa Bay,Rangwe,East Kochia,Kamenya,RANGWE,Oneno,-0.56097,34.53711
+3238,Kajieyi Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,East Karachuonyo,Wangchieng,Kajieyi,KARACHUONYO,Lida  Market,-0.37471,34.74031
+3353,Kamasengere Dispensary,Dispensary,Christian Health Association of Kenya,Homa Bay,Mbita,Mbita,Rusinga West,Kamasengere East,MBITA,Kolunga Beach,-0.42124,34.14635
+3403,Kamuchisu Dispensary,Dispensary,Ministry of Health,Kakamega,Kakamega North (Malava),,,,MALAVA,,-0.43933,34.7703
+3448,Kandiege Sub-District Hospital,Sub-District Hospital,Ministry of Health,Homa Bay,Rachuonyo North,West Karachuonyo,Koyugi,Kojwang,KARACHUONYO,Kandiege Market,-0.42939,34.55277
+3476,Kangri Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,West karachuonyo,Kamser Nyakongo,Kamser A,KARACHUONYO,Oyuma Market,-0.35024,34.61466
+3735,Kargeno VCT,VCT Centre (Stand-Alone),Non-Governmental Organizations,Homa Bay,Rachuonyo South,East Karachuonyo,North East Karachuonyo,Konyango Kajieri,KARACHUONYO,Kendu Bay Town,-0.3635,34.64732
+3738,KARI,Dispensary,Ministry of Health,Kisii,Kisii Central,,,,NYARIBARI MASABA,Kisii,-0.40337,34.47308
+3801,Kasewe Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo South,Kabondo,Kasewe,Kasewe B,KASIPUL/KABONDO,Near Sori centre,-0.444,34.444
+3905,Kauma Health Centre (Rachuonyo),Health Centre,Ministry of Health,Homa Bay,Rachuonyo South,Kabondo,Ramba,Kakangutu West,KASIPUL/KABONDO,Near Ramba Market,-0.40412,34.8234
+3978,Kendu Adventist Hospital,Other Hospital,Christian Health Association of Kenya,Homa Bay,Rachuonyo North,East Karachuonyo,North Karachuonyo,Upper Kakwajuok,KARACHUONYO,Benga Market,-0.40151,34.66465
+3979,Kendu Sub-District Hospital,Sub-District Hospital,Ministry of Health,Homa Bay,Rachuonyo North,East Karachuonyo,Northeast Karachuonyo,Konyango Kajieri,KARACHUONYO,Kendu-Bay Town,-0.37066,34.65042
+3992,Kenya Acorn Project (Acorn) Health Centre,Medical Clinic,Private Enterprise (Institution),Homa Bay,Ndhiwa,Ndhiwa,West Kanyamwa,Kayambo,NDHIWA,Ndhiwa,-0.7179,34.34824
+4183,Kiasa Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,Kobama,East Kwabai,Kamdar Kodondo,NDHIWA,Ratanga,-0.75302,34.30196
+4258,Kiembe Dispensary,Dispensary,Ministry of Health,Homa Bay,Suba,Gwassi,Gwassi West,Tonga,GWASI,Magunga,-0.65355,34.13381
+4280,Kigwa Dispensary,Dispensary,Ministry of Health,Homa Bay,Suba,Gwassi,Gwassi East,Kibwer,GWASI,Magunga,-0.67382,34.20986
+4311,Kijawa Dispensary,Dispensary,Ministry of Health,Homa Bay,Homa Bay,Asego,East Kanyada,Kalanya Kanyango,RANGWE,Rodi Kopany,-0.61988,34.47081
+4403,Kimonge Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo South,Kasipul,Kojwach,Kawere,KASIPUL/KABONDO,Gamba,-0.51833,34.81161
+4467,Kioge Dispensary,Dispensary,Ministry of Health,Kisii,Kisii Central,Mosocho,Nyakoe,Kioge,KITUTU CHACHE,Nyakoe,-0.37663,34.4468
+4483,Kipingi Dispensary,Dispensary,Ministry of Health,Migori,Nyatike,Karungu,S.E Karungu,Okayo,NYATIKE,Sori,-0.850218,34.1449
+4602,Kisaku Dispensary,Dispensary,Ministry of Health,Homa Bay,Suba,Gwassi,Gwassi North,Kisaku,GWASI,Magunga,-0.66163,34.10946
+4613,Kisegi Sub-District Hospital,Sub-District Hospital,Ministry of Health,Homa Bay,Suba,Gwassi,Gwassi North,Uterere,GWASI,Nyagwethe,-0.64686,34.05712
+4665,Kitare Health Centre,Health Centre,Ministry of Health,Homa Bay,Mbita,Mbita,Gembe East,Kayanja,MBITA,Kitare,-0.506,34.33066
+4738,Kiwa Island Dispensary,Dispensary,Ministry of Health,Homa Bay,Suba,Gwassi,Gwassi West,Nyandiwa,GWASI,Nyandiwa,-0.7513,34.03312
+4760,Kobodo Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,Kobodo,,,NDHIWA,,-0.4587,34.5426
+4765,Kobuya Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,East Karachuonyo,Kobuya,East Kobuya,KARACHUONYO,Miriu Market,-0.35144,34.78689
+4771,Koduogo Dispensary,Dispensary,Ministry of Health,Homa Bay,Homa Bay,Asego,West Kanyada,North Kanyabala,RANGWE,Homa bay Town,-0.57,34.4
+4776,Kogweno Oriang' Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,East Karachuonyo,Kogweno Oriang',Kogweno Oriang' East,KARACHUONYO,Oriang'  Market,-0.39146,34.63092
+4794,Kokech Mirondo Health Center,Health Centre,Ministry of Health,Homa Bay,Rachuonyo South,Kasiipul,Kokech,Kawino,KASIPUL/KABONDO,Mirondo Secondary,-0.50455,34.69198
+4799,Kokwanyo Health Centre,Health Centre,Ministry of Health,Homa Bay,Rachuonyo South,Kasipul,Kokwanyo,West Kokwanyo,KASIPUL/KABONDO,Kochola Market,-0.41206,34.78627
+4822,Kome Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,Ndhiwa,Kanyamwa Central,kwandiku,NDHIWA,Kodumba,-0.65,34.6
+4862,Kosele Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,East Karachuonyo,North East Karachuonyo,Jieri,KASIPUL/KABONDO,Kosele Market,-0.42044,34.68755
+4871,Koywech Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo South,Kasipul,North Kamagak,Kawere East,KASIPUL/KABONDO,Nead God Nyango Primry,-0.44755,34.72799
+4936,Kwamo Dispensary,Dispensary,Community,Homa Bay,Ndhiwa,Ndhiwa,Central Kanyamwa,Kabonyo,NDHIWA,Ndhiwa,-0.71297,34.30875
+5020,Lambwe Dispensary,Dispensary,Ministry of Health,Homa Bay,Mbita,Lambwe,Lambwe West,Godjope,MBITA,Ogongo,-0.55591,34.32535
+5021,Lambwe Forest Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,Ndhiwa,South Kanyamwa,Kajwang,NDHIWA,Mirogi,-0.67757,34.307
+5066,Lela (Community) Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,East Karachuonyo,Rambira,Karabondi,KARACHUONYO,Apida Market,-0.35833,34.71111
+5084,Lenmek Hospital,Other Hospital,Private Practice - Medical Specialist,Kisii,Sameta,Sameta,Bassi Bogetaorio,,BOBASI,Ogembo,-0.46874,34.44215
+5218,Lombi Medical Clinic,Medical Clinic,Private Practice - Clinical Officer,Homa Bay,Rachuonyo South,Kasipul,Kakelo,Kakelo Dudi,KASIPUL/KABONDO,Mikae Market,-0.48668,34.80982
+5315,Lwanda Awiti Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,Kobama,,,NDHIWA,,-0.7964,34.27632
+5318,Lwanda Gwassi Dispensary,Dispensary,Ministry of Health,Homa Bay,Suba,Gwassi,Gwassi South,Lwala,GWASI,Magunga,-0.7553,34.09525
+5378,Magao Dispesnsary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,East Karachuonyo,North East Location,Kotieno,KARACHUONYO,Makaka Market,-0.3468,34.593
+5386,Magina Health Centre,Health Centre,Ministry of Health,Homa Bay,Ndhiwa,Riana,Central Kabuoch,Kawour/Kawere,NDHIWA,Magina,-0.69821,34.51851
+5394,Magunga Health Centre,Health Centre,Ministry of Health,Homa Bay,Suba,Gwassi,Gwassi Central,Magunga,GWASI,Magunga,-0.68872,34.14833
+5474,Makongeni Health Centre,Health Centre,Ministry of Health,Homa Bay,Homa Bay,Asego,Township,Asego,RANGWE,Homa bay town,-0.53,34.5
+5514,Malela Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,Ndhiwa,North Kanyamwa,Kakaeta,NDHIWA,Hoama Bay,-0.58486,34.39193
+5531,Malongo Dispensary,Dispensary,Ministry of Health,Homa Bay,Suba,Gwassi,Gwassi North,Malongo,GWASI,Sindo,-0.64172,34.0567
+5536,Mama Josphene Clinic,Medical Clinic,Private Practice - Nurse / Midwife,Homa Bay,Suba,Central,Kaksingri Central,Sindo,GWASI,Sindo,-0.54087,34.16841
+5540,Mama Maria Clinic,Medical Clinic,Kenya Episcopal Conference-Catholic Secretariat,Migori,Nyatike,Muhuru,East Muhuru,Tagache,NYATIKE,Muhuru Bay,-0.990782,34.118
+5565,Mangima SDA Health Centre,Health Centre,Christian Health Association of Kenya,Homa Bay,Rachuonyo South,Kasipul,Konuonga,Konuonga,KASIPUL/KABONDO,Matieko Market,-0.55951,34.70676
+5568,Mango Tree VCT,Medical Clinic,Private Enterprise (Institution),Homa Bay,Rachuonyo North,East Karachuonyo,Wangchieng,Rakwaro,KARACHUONYO,Rakwaro,-0.34158,34.6234
+5586,Manyatta (SDA) Dispensary,Dispensary,Christian Health Association of Kenya,Homa Bay,Homa Bay,Rangwe,East Kagan,Kanyaruanda(2),RANGWE,Ndiru,-0.50578,34.61985
+5619,Maram Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,Riana,Central Kabuoch,Konyango,NDHIWA,Maram,-0.67527,34.5468
+5680,Marindi Sub county Hospital,District Hospital,Ministry of Health,Homa Bay,Homa Bay,Asego,West-Kanyada,Katuma(1),RANGWE,Rodi Kopany,-0.65262,34.52024
+5760,Masogo Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo South,Kabondo,Ramba,Kodumo West,KASIPUL/KABONDO,Kowuor Market,-0.42549,34.82331
+5784,Matata Nursing Hospital,Nursing Home,Other Faith Based,Homa Bay,Rachuonyo South,Kasipul,West Kamagak,Kamuma,KASIPUL/KABONDO,Oyugis Town,-0.50385,34.73827
+5821,Matoso Health Clinic,Medical Clinic,Non-Governmental Organizations,Migori,Nyatike,Nyatike,West Kadem,Winam,NYATIKE,Matoso,-0.97685,34.13299
+5866,Mawego Health Centre,Health Centre,Kenya Episcopal Conference-Catholic Secretariat,Homa Bay,Rachuonyo North,East Karachuonyo,Kobuya,East Kobuya,KARACHUONYO,Mawego Market,-0.39283,34.77082
+5920,Mbita District Hospital,District Hospital,Ministry of Health,Homa Bay,Mbita,Mbita,Gembe West,Mbita Tnshp,MBITA,Mbita,-0.42249,34.20819
+6112,Midodo Obuya Joy Haugesend,Dispensary,Christian Health Association of Kenya,Homa Bay,Ndhiwa,Pala,Koguta,Boya,NDHIWA,Pala Market,-0.80636,34.43935
+6163,Miniambo Dispensary,Dispensary,Ministry of Health,Homa Bay,Homa Bay,Asego,East Kanyada,Kobuola Kogwang(1),RANGWE,Rodi Kopany,-0.53761,34.48563
+6169,Miorre Dispensary,Dispensary,Ministry of Health,Homa Bay,Mbita,Mbita,Gembe Central,Kamreri West,MBITA,Mbita,-0.50545,34.2372
+6183,Miriu Health Centre,Health Centre,Ministry of Health,Homa Bay,Rachuonyo North,East Karachuonyo,Wangchieng,Kamwala,KARACHUONYO,Rakwaro Market,-0.35494,34.75608
+6184,Mirogi Health Centre,Health Centre,Kenya Episcopal Conference-Catholic Secretariat,Homa Bay,Ndhiwa,Ndhiwa,Central Kanyamwa,Kabonyo,NDHIWA,Mirogi,-0.69962,34.38402
+6330,Mosocho Market Disp,Dispensary,Ministry of Health,Kisii,Kisii Central,Mosocho,Mosocho,Bonyagatanyi,KITUTU CHACHE,Mosocho,-0.35141,34.43903
+6380,Msare Health Centre,Health Centre,Ministry of Health,Homa Bay,Suba,Central,Kakisingri W,Rangwa East,GWASI,Sindo,-0.59192,34.18781
+6479,Muhuru Health Centre,Other Hospital,Ministry of Health,Migori,Nyatike,Muhuru,East Muhuru,Tagache,NYATIKE,Muhuru Bay,-1.01294,34.1318
+7044,Ndere Community Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,West karachuonyo,Kanam A,Kowour,KARACHUONYO,Nyangweta Market,-0.3941,34.46325
+7047,Ndhiwa Sub-District Hospital,Sub-District Hospital,Ministry of Health,Homa Bay,Ndhiwa,Ndhiwa,West Kanyamwa,Kayambo,NDHIWA,Ndhiwa,-0.73166,34.36701
+7048,Ndhuru Dispensary,Dispensary,Ministry of Health,Homa Bay,Mbita,Lambwe,Lambwe East,Nyamaji East,MBITA,Kipasi,-0.51271,34.41892
+7053,Ndiru Health Centre,Health Centre,Ministry of Health,Homa Bay,Homa Bay,Rangwe,Kagan,Kanyiriema(1),RANGWE,Ndiru,-0.52233,34.57814
+7054,Ndisi Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,Ndhiwa,,,NDHIWA,,-0.68057,34.34749
+7073,Nduga Dispensary,Dispensary,Ministry of Health,Homa Bay,Homa Bay,Rangwe,Gem West,Kanyanjwa,RANGWE,Rangwe Market,-0.58,34.6
+7147,New Mbita Clinic,Medical Clinic,Private Practice - Clinical Officer,Homa Bay,Mbita,Mbita,Waware,Rusinga East,MBITA,Mbita,-0.41589,34.2026
+7196,Ngegu Dispensary,Dispensary,Ministry of Health,Homa Bay,Homa Bay,Rangwe,West Kochia,Kaura(1),RANGWE,Homa Bay,-0.49253,34.51017
+7212,Ngeri Dispensary,Dispensary,Ministry of Health,Homa Bay,Suba,Central,Kaksingiri West,Rangwa West,GWASI,Magunga,-0.59819,34.10402
+7215,Ngeta Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,West karachuonyo,Kamser Nyakongo,Kamser,KARACHUONYO,Ngeta Market,-0.36394,34.58051
+7229,Ng'imalo Dispensary,Dispensary,Ministry of Health,Migori,Nyatike,Nyatike,S.E Kadem,Ng'Ira,NYATIKE,Sori,-0.854836,34.182
+7238,Ng'odhe Dispensary (Main Land),Dispensary,Ministry of Health,Homa Bay,Mbita,Mbita,Gembe West,Kasgunga Central,MBITA,Mbita,-0.49377,34.36375
+7239,Ng'odhe Island Dispensary,Dispensary,Ministry of Health,Homa Bay,Suba,Mbita,Rusinga West,Wanyama,GWASI,Mbita,-0.35246,34.19039
+7266,Nguku Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,Nyarongi,West Kanyadoto,Kabura North,NDHIWA,Ndhiwa,-0.80291,34.36585
+7405,Nyabola Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo South,Kasipul,Konuonga,Kochich,KASIPUL/KABONDO,Kotieno Market,-0.553,34.71608
+7416,Nyadenda Health Centre,Health Centre,Ministry of Health,Homa Bay,Suba,Central,Kaksingri East,Sumba East,GWASI,Nyadenda,-0.60605,34.23837
+7426,Nyagoro Health Centre,Health Centre,Ministry of Health,Homa Bay,Homa Bay,Rangwe,East Kochia,Korayo(2),RANGWE,Olare,-0.51561,34.535474
+7428,Nyagowa Elck Dispensary,Dispensary,Other Faith Based,Homa Bay,Rachuonyo South,Kasipul,Kotieno,Konuonga,KASIPUL/KABONDO,Kidir  Market,-0.52445,34.67592
+7431,Nyagwethe Dispensary,Dispensary,Kenya Episcopal Conference-Catholic Secretariat,Homa Bay,Suba,Gwassi,Gwassi North,Uterere,GWASI,Nyagwethe,-0.61089,34.09796
+7436,Nyaiguta Dispensary,Dispensary,Ministry of Health,Nyamira,North Masaba,Gesima,Gesima,,KITUTU MASABA,Gesima Market,-0.57212,34.00415
+7451,Nyalenda Nursing Home,Nursing Home,Private Practice - General Practitioner,Homa Bay,Rachuonyo South,Kasipul,North Kamagak,Nyalenda,KASIPUL/KABONDO,Manyoro Market,-0.46587,34.73448
+7452,Nyalgosi Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo South,Kasipul,North Kachien,Kaditonge,KARACHUONYO,Nduga  Market,-0.45458,34.68672
+7457,Nyalkembo Dispensary,Dispensary,Ministry of Health,Homa Bay,Suba,Cental,Kaksingri East,Sumba East,GWASI,Nyadenda,-0.60605,34.23838
+7458,Nyalkinyi (Jersey) Dispensary,Dispensary,Ministry of Health,Homa Bay,Homa Bay,Asego,East Kanyada,Kobuola Kogwang,RANGWE,Next to Nyalkinyi Primary School,-0.53279,34.49332
+7474,Nyamasi Dispensary,Dispensary,Ministry of Health,Homa Bay,Homa Bay,Asego,West-Kanyada,South Kanyabala,RANGWE,Rodi Kopany,-0.62408,34.4521
+7478,Nyambare Dispensary,Dispensary,Ministry of Health,Homa Bay,Homa Bay,Rangwe,Gem East,Kotieno,RANGWE,Rangwe Market,-0.56,34.6
+7495,Nyamokenye Health Centre(Sameta),Health Centre,Ministry of Health,Kisii,Sameta,Sameta,Mokwerero,Rise,BOBASI,Nyamokenye,-0.47492,34.45801
+7497,Nyamrisra Health Centre,Health Centre,Ministry of Health,Homa Bay,Suba,Central,Kakisingri West,Nyamrisra,GWASI,Sindo,-0.57025,34.09686
+7503,Nyandiwa Baptist Dispensary,Dispensary,Christian Health Association of Kenya,Homa Bay,Rachuonyo South,Kabondo,Kawuor,Miriu,KASIPUL/KABONDO,Kadongo Market,-0.4177,34.91885
+7504,Nyandiwa Dispensary,Dispensary,Ministry of Health,Homa Bay,Suba,Gwassi,Gwassi West,Nyandiwa,GWASI,Nyandiwa,-0.72455,34.05126
+7510,Nyangajo Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,East Karachuonyo,North Karachuonyo,Kanyadhiang,KARACHUONYO,Kendu,-0.40441,34.64601
+7514,Nyangiela Dispensary,Health Centre,Ministry of Health,Homa Bay,Rachuonyo South,Kasipul,Konuonga,Konuonga,KASIPUL/KABONDO,Nyangiela Market,-0.53946,34.70716
+7534,Nyaoga Community Dispensary,Dispensary,Non-Governmental Organizations,Homa Bay,Rachuonyo North,West Karachuonyo,Kokoth,Koredo,KARACHUONYO,Aros Market,-0.34955,34.52025
+7543,Nyarut Health Centre,Health Centre,Ministry of Health,Homa Bay,Homa Bay,Rangwe,Kochia Central,Kowili,RANGWE,Nyangweso Market,-0.47,34.5
+7551,Nyatoto Health Centre,Health Centre,Ministry of Health,Homa Bay,Suba,Central,Ruma,Nyatoto,GWASI,Nyatoto,-0.55661,34.27185
+7552,Nyaura Dispensary,Dispensary,Ministry of Health,Kisii,Kisii Central,Kiogoro,Bosongo,Nyaura,NYARIBARI CHACHE,Kisii,-0.4204,34.46495
+7553,Nyawango Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo South,Kasipul,Kokwanyo,Kokwanyo,KASIPUL/KABONDO,Lida Market,-0.41461,34.75861
+7555,Nyawawa Dispensary,Dispensary,Ministry of Health,Homa Bay,Homa Bay,Rangwe,Gem West,Genga,RANGWE,Rangwe Market,-0.65,34.6
+7557,Nyawita Dispensary,Dispensary,Ministry of Health,Homa Bay,Homa Bay,Rangwe,Gongo,Gongo,RANGWE,Rangwe Market,-0.57,34.6
+7589,Nys Dispensary (Suba),Dispensary,Other Public Institution,Homa Bay,Suba,Central,Ruma,Nyadenda,GWASI,Nyadenda,-0.60789,34.25982
+7628,Oasis Specialist Hospital,Other Hospital,Private Practice - Medical Specialist,Kisii,Kisii Central,Mosocho,Mwamosioma,Township,KITUTU CHACHE,Kisii Municipal Mkt,-0.40089,34.46193
+7629,Obalwanda Dispensary,Dispensary,Ministry of Health,Homa Bay,Mbita,Mbita,Gembe Central,Kamreri West,MBITA,Luanda,-0.49418,34.2833
+7630,Obanga Health Centre,Health Centre,Ministry of Health,Homa Bay,Suba,Gwassi,Gwassi West,Tonga,GWASI,magunga,-0.68652,34.07781
+7632,Ober Health Centre,Health Centre,Ministry of Health,Homa Bay,Rachuonyo South,Kabondo,Kakelo,Kakelo Dudi,KASIPUL/KABONDO,Mikae Market,-0.48676,34.81052
+7633,Ober Kabuoch Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,Riana,South Kabuoch,Kobita,NDHIWA,Magina,-0.76661,34.43956
+7638,Obunga Dispensary,Dispensary,Ministry of Health,Homa Bay,Homa Bay,Rangwe,Kagan East,Kanyaruanda(2),RANGWE,Rangwe,-0.55712,34.62644
+7639,Obuya Dispensary,Dispensary,Ministry of Health,Homa Bay,Homa Bay,Rangwe,West Kagan,Kokoko,RANGWE,Ndiru Market,-0.53,34.6
+7640,Obwanda Dispensary,Dispensary,Ministry of Health,Homa Bay,Homa Bay,Rangwe,Kagan East,Komenya(1),RANGWE,Ndiru,-0.47666,34.59013
+7654,Ogande Dispensary,Dispensary,Christian Health Association of Kenya,Homa Bay,Homa Bay,Asego,East Kanyada,Kothidha,RANGWE,Rodi Kopany,-0.58832,34.50667
+7655,Ogando Dispensary,Dispensary,Ministry of Health,Homa Bay,Mbita,Lambwe,Lambwe West,Ogongo,MBITA,Ogongo,-0.5997,34.33293
+7664,Ogongo Sub-District Hospital,Sub-District Hospital,Ministry of Health,Homa Bay,Mbita,Lambwe,Lambwe East,Ruri East,MBITA,Ogongo,-0.57345,34.37187
+7673,Ojwando Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo South,Kasipul,East Kamagak,,KASIPUL/KABONDO,Near Ouru Market,-0.425,34.66247
+7675,Okiki Amayo Health Centre,Health Centre,Ministry of Health,Homa Bay,Rachuonyo North,West Karachuonyo,Kakdhimu West,Kayoo East,KARACHUONYO,Kodula Market,-0.41198,34.51135
+7677,Okitta Maternity Nursing Home,Nursing Home,Private Enterprise (Institution),Homa Bay,Rachuonyo South,Kabondo,Kasewe/Kawuor,Kasewe B,KASIPUL/KABONDO,Kadongo Market,-0.4482,34.89139
+7678,Okok Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,Ndhiwa,S. Kanyamwa,Kajwang,NDHIWA,Kobodo,-0.6829,34.42877
+7682,Olando Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,East Karachuonyo,East Kanyaluo,East Kowuor,KARACHUONYO,Olando Market,-0.43246,34.65263
+7778,Ombek Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo South,Kasipul,Kodera,Kodera Karabach,KASIPUL/KABONDO,Ombek Market,-0.56837,34.6642
+7780,Ombo Kachieng' Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,Riana,West Kabuoch,East Kachieng,NDHIWA,Pala,-0.73314,34.45512
+7782,Omboga Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,East Karachuonyo,South Kanyaluo,Central Kamenya,KARACHUONYO,Omboga Market,-0.43925,34.62273
+7783,Omiro Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo South,Kasipul,Kakelo,Kamroth,KASIPUL/KABONDO,Riat Market,-0.45299,34.80357
+7793,Oneno Dispensary,Dispensary,Ministry of Health,Homa Bay,Homa Bay,Rangwe,East Kochia,Korayo,RANGWE,Omoya,-0.55689,34.54841
+7794,Ong'amo Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo South,Kasipul,North Kodera,Kodera Kamiyawa,KASIPUL/KABONDO,Near Ong'amo Market,-0.49503,34.66247
+7804,Ongo Health Centre,Health Centre,Ministry of Health,Migori,Rongo,Rongo,South  Kamagambo,South  Kanyajuok,RONGO,Ranen,-0.6623,34.5712
+7816,Orego Health Centre,Health Centre,Ministry of Health,Homa Bay,Homa Bay,Asego,Komollo,Komollo,RANGWE,Homa bay,-0.6221,34.544
+7819,Oriang (SDA) Health Centre,Health Centre,Christian Health Association of Kenya,Homa Bay,Rachuonyo North,West Karachuonyo,East Karachuonyo,Oriang Kogweno East,KARACHUONYO,Oriang Market,-0.39968,34.62755
+7822,Oriang VCT,VCT Centre (Stand-Alone),Non-Governmental Organizations,Homa Bay,Rachuonyo South,Kabondo,Kowuor,Kodhoch East,KASIPUL/KABONDO,Misambi Market,-0.44391,34.91984
+7823,Oridi Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,Nyarongi,North Kanyikela,North Kanyikela,NDHIWA,Rapedhi,-0.77833,34.37896
+7839,Osani Community Dispensary,Dispensary,Private Practice - Unspecified,Homa Bay,Ndhiwa,Kobama,,,NDHIWA,,-0.8375,34.3018
+7840,Osano Nursing Home,Nursing Home,Private Enterprise (Institution),Homa Bay,Ndhiwa,Ndhiwa,West Kanyamwa,Kayambo,NDHIWA,Ndhiwa,-0.7305,34.37074
+7852,Otange Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,Nyarongi,South Kanyikela,South Kanyikela,NDHIWA,"Riat market, sukari sugar industry",-0.81805,34.37872
+7861,Othoro Health Centre (Rachuonyo),Health Centre,Ministry of Health,Homa Bay,Rachuonyo South,Kabondo,Kawuor,Kodhoch East,KASIPUL/KABONDO,Othoro Market,-0.43524,34.95534
+7875,Oyuma Dispensary (Rachuonyo),Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,East Karachuonyo,Central Karachuonyo,Kogweno Kawuor,KARACHUONYO,Oyuma,-0.36542,34.61512
+7889,Pala Health Centre,Health Centre,Ministry of Health,Homa Bay,Ndhiwa,Pala,South Kabuoch,Koguta,NDHIWA,Pala,-0.80482,34.4448
+7890,Pala Masogo Health Centre,Health Centre,Ministry of Health,Homa Bay,Homa Bay,Asego,East Kanyada,Kanyach Kachar,RANGWE,Rodi Makket,-0.64,34.5
+8021,Ponge Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,Riana,South Kabuoch,Kamenya,NDHIWA,Pala,-0.84191,34.45558
+8022,Ponge Dispensary (Mbita),Dispensary,Ministry of Health,Homa Bay,Mbita,Mbita,Gembe Central,Kamreri,MBITA,Luanda,-0.52066,34.26754
+8029,Port Florence (Ndhiwa),Medical Clinic,Private Enterprise (Institution),Homa Bay,Ndhiwa,Ndhiwa,Lower Kayambo,Lower Kayambo,NDHIWA,Rimu,-0.73482,34.37116
+8031,Port Florence Community Hospital Homa Bay Clinic,Medical Clinic,Non-Governmental Organizations,Homa Bay,Homa Bay,Asego,Town,Township,RANGWE,Homabay Town,-0.54,34.5
+8032,Port Florence Community Hospital Mbita,Medical Clinic,Non-Governmental Organizations,Homa Bay,Mbita,Mbita,Mbita,Township,MBITA,Mbita,-0.42385,34.2073
+8125,Rachuonyo District Hospital,District Hospital,Ministry of Health,Homa Bay,Rachuonyo South,Kasipul,Kowidi,Kamuma,KASIPUL/KABONDO,Oyugis Town,-0.50596,34.7329
+8142,Ragwe Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo South,Kasipul,Kodera North,Kamiyawa,KASIPUL/KABONDO,Near Nyakiya Primary School,-0.52177,34.66174
+8158,Ramba Health Centre (Nyamira),Health Centre,Ministry of Health,Nyamira,Nyamira,Nyamira,Bogichora,Ibucha,WEST MUGIRANGO,Nyamira,-0.55751,34.00415
+8165,Randung' Dispensary,Dispensary,Ministry of Health,Homa Bay,Homa Bay,Rangwe,West Gem,Kamagawi,RANGWE,Rangwe,-0.63551,34.56268
+8170,Rangwe (SDA) Dispensary,Dispensary,Christian Health Association of Kenya,Homa Bay,Homa Bay,Rangwe,West Gem,Kamagawi,RANGWE,Rangwe,-0.59816,34.5836
+8171,Rangwe Sub-District Hospital,District Hospital,Ministry of Health,Homa Bay,Homa Bay,Rangwe,West Gem,Kamagawi,RANGWE,Rangwe,-0.60106,34.58135
+8185,Rariw Dispensary,Dispensary,Ministry of Health,Homa Bay,Homa Bay,Rangwe,Central Gem,Kajulu,RANGWE,Asumbi,-0.58085,34.61745
+8186,Raruowa Health Centre,Health Centre,Kenya Episcopal Conference-Catholic Secretariat,Homa Bay,Rachuonyo North,West Karachuonyo,Koyugi,,KARACHUONYO,Kandiege Market,-0.41175,34.55658
+8226,Remba Dispensary,Dispensary,Ministry of Health,Homa Bay,Mbita,Mfangano,Mfangano North,Soklo North,MBITA,Sena,-0.56106,33.9279
+8271,Ringa Dispensary,Dispensary,Kenya Episcopal Conference-Catholic Secretariat,Homa Bay,Rachuonyo South,Kabondo,Kojwach,Kamioro,KASIPUL/KABONDO,Ringa Market,-0.47464,34.8515
+8272,Ringiti Dispensary,Dispensary,Ministry of Health,Homa Bay,Mbita,Mfangano,Mfangano West,Wakula North,MBITA,Sena,-0.56106,33.9279
+8285,Roadblock Clinic,Medical Clinic,Private Enterprise (Institution),Homa Bay,Ndhiwa,Ndhiwa,West Kanyamwa,Kayambo,NDHIWA,Ndhiwa,-0.72947,34.36915
+8391,Rusinga Island of Hope Humanist Health Centre,Health Centre,Private Enterprise (Institution),Homa Bay,Mbita,Mbita,Rusinga West,Kamasengre West,MBITA,Kamasengre,-0.42356,34.14039
+8563,Seka Health Centre,Health Centre,Ministry of Health,Homa Bay,Suba,Gwassi,Gwassi South,Lwala,GWASI,Magunga Town,-0.73846,34.13543
+8569,Sena Health Centre,Health Centre,Ministry of Health,Homa Bay,Mbita,Mfangano,Mfangano East,Wakinga,MBITA,Sena,-0.46828,34.06427
+8675,Shirikisho Dispensary,Dispensary,Other Faith Based,Homa Bay,Rachuonyo South,Kasipul,Kowidi,Kokal,KASIPUL/KABONDO,Oyugis Town,-0.51185,34.73161
+8744,Simbi Kogembo Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo North,East Karachuonyo,Central Karachuonyo,Kogembo,KARACHUONYO,Oyuma Market,-0.36474,34.62989
+8746,Simbiri Nanbell Health Centre,Health Centre,Private Enterprise (Institution),Homa Bay,Rachuonyo South,Kasipul,North Kamagak,,KASIPUL/KABONDO,Kosele Market,-0.42618,34.70728
+8761,Sindo Drop In Centre,VCT Centre (Stand-Alone),Non-Governmental Organizations,Homa Bay,Suba,Central,Central,Kaksingiri,GWASI,Sino Town,-0.55,34.13
+8766,Sino Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo South,Kasipul,East Kamagak,Sino,KASIPUL/KABONDO,Orembe Market,-0.44663,34.76677
+8831,Soklo Dispensary,Dispensary,Ministry of Health,Homa Bay,Mbita,Mfangano,Mfangano South,Wakula South,MBITA,Sena,-0.46828,34.03159
+8909,St Agnes Health Care Clinic,Medical Clinic,Private Practice - Nurse / Midwife,Kisii,Sameta,Sameta,Itumbe,Giasaiga,BOBASI,Itumbe,-0.45415,34.46648
+8993,St Francis of Assis Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo South,,,,KASIPUL/KABONDO,,-0.52931,34.74842
+9029,St John's Karabach Dispensary,Dispensary,Private Enterprise (Institution),Homa Bay,Rachuonyo South,Kasipul,Kodera,Karabach,KASIPUL/KABONDO,Karogo Market,-0.58861,34.69433
+9067,St Jude Health Centre (Icipe),Health Centre,Private Enterprise (Institution),Homa Bay,Mbita,Mbita,Gembe West,Mbita Township,MBITA,Mbita,-0.4303,34.20602
+9093,St Luke's Health Centre (Mbita),Health Centre,Kenya Episcopal Conference-Catholic Secretariat,Homa Bay,Mbita,Mfangano,Mfangano East,Wakinga,MBITA,Sena,-0.47592,34.06407
+9128,St Mary's Health Centre (Mbita),Health Centre,Kenya Episcopal Conference-Catholic Secretariat,Homa Bay,Mbita,Mbita,Gembe West,Mbita Township,MBITA,Mbita,-0.4365,34.20394
+9153,St Mercelline Roo Dispensary (Suba),Dispensary,Other Faith Based,Homa Bay,Suba,Central,Kaksingri West,Rangwa West,GWASI,Sindo,-0.55831,34.12547
+9187,St Paul's Health Centre,Health Centre,Kenya Episcopal Conference-Catholic Secretariat,Homa Bay,Homa Bay,Asego,Homa-Bay Town,Township,RANGWE,Homa-Bay,-0.52283,34.46236
+9293,Suba District Hospital,District Hospital,Ministry of Health,Homa Bay,Suba,Central,Kakisingri Central,Sindo,GWASI,Sindo,-0.59857,34.1675
+9313,Sulwe Clinic,Medical Clinic,Private Enterprise (Institution),Homa Bay,Rachuonyo South,Kasipul,West Kamagak,Kamuma,KASIPUL/KABONDO,Oyugis Town,-0.50635,34.73679
+9333,Sunrise Clinic,Medical Clinic,Private Enterprise (Institution),Homa Bay,Rachuonyo South,Kasipul,Kowidi,Kokal,KASIPUL/KABONDO,Oyugis Town,-0.51163,34.73432
+9364,Swindon Clinic,Medical Clinic,Private Enterprise (Institution),Homa Bay,Rachuonyo South,Kasipul,East Kamagak,Kachieng,KASIPUL/KABONDO,Sikri Market,-0.48705,34.76996
+9399,Takawiri Dispensary,Dispensary,Ministry of Health,Homa Bay,Mbita,Mfangano,Mfangano East,Wakinga,MBITA,Takawiri beach,-0.47441,34.08651
+9402,Tala Dispensary,Dispensary,Ministry of Health,Homa Bay,Rachuonyo South,Kasipul,Kokwanyo,East Kokwanyo,KASIPUL/KABONDO,Olima market,-0.44364,34.83802
+9606,Tom Mboya Memorial Health Centre,Health Centre,Ministry of Health,Homa Bay,Mbita,Mbita,Rusinga West,Kaswanga,MBITA,Kaswanga,-0.4002,34.16409
+9610,Tonga Health Centre,Health Centre,Kenya Episcopal Conference-Catholic Secretariat,Homa Bay,Suba,Gwassi,Gwassi West,Tonga,GWASI,Magunga,-0.69311,34.12379
+9624,Toric's Nursing Home,Nursing Home,Private Practice - Nurse / Midwife,Homa Bay,Rachuonyo South,Kasipul,West Kamagak,Kamuma,KASIPUL/KABONDO,In Oyugis town along Oyugis Kisumu highway,-0.49955,34.73975
+9760,Tuungane Youth Centre (Mbita),VCT Centre (Stand-Alone),Non-Governmental Organizations,Homa Bay,Mbita,Mbita,Township,Mbita Township,MBITA,Mbita,-0.42642,34.20715
+9776,Ugina Health Centre,Health Centre,Ministry of Health,Homa Bay,Mbita,Mfangano,Mfangano South,Wakula South,MBITA,Ugina Beach,-0.47813,33.98636
+9810,Unga Dispensary,Dispensary,Ministry of Health,Homa Bay,Ndhiwa,,,,NDHIWA,,-0.7598,34.41336
+9851,Upendo VCT Centre,VCT Centre (Stand-Alone),Non-Governmental Organizations,Homa Bay,Homa Bay,Asego,Homa bay Town,Homa Bay Town,RANGWE,Homa Bay,-0.53173,34.45798
+9866,Usao Health Centre,Health Centre,Ministry of Health,Homa Bay,Mbita,Mbita,Gembe East,Usao,MBITA,Homa Bay,-0.47394,34.38572
+9915,Viagenco Medical Centre,Medical Centre,Non-Governmental Organizations,Homa Bay,Mbita,Mbita,Gembe West,Kasgunga East,MBITA,Luanda Market,-0.4747,34.28649
+9983,Wagwe Health Centre,Health Centre,Ministry of Health,Homa Bay,Rachuonyo North,West Karachuonyo,Kobiero,Wagwe South,KARACHUONYO,Pala Market,-0.34992,34.57419
+10006,Wakula Health Centre,Health Centre,Ministry of Health,Homa Bay,Mbita,Mfangano,Mfangano North,Soklo North,MBITA,Sena,-0.45066,33.98847

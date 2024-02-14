@@ -1,0 +1,142 @@
+   {% extends 'blog/services/html' %}
+   {% load static %}
+   {% load leaflet %}
+   {% block content %}
+	
+	<div class="container-fluid">
+		<h2>Homa_Bay map</h2>
+		 
+		<script type="text/javascript">
+		    function initializeMap(map, options) {
+
+		    	var centerCoordinates = [-0.649970, 34.543103];
+			    var initialZoomLevel = 9.5;
+			    map.setView(centerCoordinates, initialZoomLevel);
+				    	var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+    			var openTopo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png');
+    			var esriWorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}');
+
+
+    			// Create a marker cluster group
+            	var markers = L.markerClusterGroup();
+
+		        var hbcounty_dat = new L.GeoJSON.AJAX("{% url 'Hb_County' %}", {
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.counties.toString());
+		        		
+		        	}
+		        });
+
+		        var hbhosp_dat = new L.GeoJSON.AJAX("{% url 'Hb_Hosp' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.facility_n.toString());
+		        		// Add each feature (layer) to the marker cluster group
+                  		markers.addLayer(layer);
+		        	},
+		        	pointToLayer: function (feature, latlng) {
+	                  // Create markers (but add them to the marker cluster group in onEachFeature)
+	                  return L.marker(latlng);
+               }
+		        });
+		        var hbsub_dat = new L.GeoJSON.AJAX("{% url 'Hb_subcounties' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.name_3.toString());
+		        	}
+		        });
+		        var hbsch_dat = new L.GeoJSON.AJAX("{% url 'Hb_Schools' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.name.toString());
+		        		// Add each feature (layer) to the marker cluster group
+                  		markers.addLayer(layer);
+		        	},
+		        	pointToLayer: function (feature, latlng) {
+                  	// Create markers (but add them to the marker cluster group in onEachFeature)
+                  	return L.marker(latlng);
+               }
+		        });
+
+		       
+		        var hbrivers_dat = new L.GeoJSON.AJAX("{% url 'Hb_rivers' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.klrivers_i.toString())
+		        	}
+		        });
+		     
+
+		        var hbroads_dat = new L.GeoJSON.AJAX("{% url 'Hb_Roads' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.kenroad_id.toString())
+		        	}
+		        });
+		        var hbagric_dat = new L.GeoJSON.AJAX("{% url 'hb_agric' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.agricultur.toString())
+		        	}
+		        });
+		        var hbprotect_dat = new L.GeoJSON.AJAX("{% url 'Hb_ProtectedAreas' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.areaname.toString())
+		        	}
+		        });
+
+		        var lakes_dat = new L.GeoJSON.AJAX("{% url 'L.Victoria' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.landcover.toString())
+		        	}
+		        });
+
+		        var soils_dat = new L.GeoJSON.AJAX("{% url 'Soils' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.drai_descr.toString())
+		        	}
+		        });
+
+				        hbcounty_dat.addTo(map);
+				        hbhosp_dat.addTo(map);
+				        hbsub_dat.addTo(map);
+				        hbsch_dat.addTo(map);
+				        hbrivers_dat.addTo(map);
+				        hbroads_dat.addTo(map);
+				        hbagric_dat.addTo(map);
+				        hbprotect_dat.addTo(map);
+				        lakes_dat.addTo(map);
+				        soils_dat.addTo(map);
+				      
+
+
+		        var baseLayers = {
+		        	"OSM":osm,
+		        	"OpenTopomap":openTopo,
+		        	"World_Imagery":esriWorldImagery
+
+		        }
+
+
+				var groupedOverlays = {
+					"Layers":{
+						"Homa-Bay County":hbcounty_dat,
+						"Health Facilities": hbhosp_dat,
+						"Sub Counties":hbsub_dat,
+						"Homa-Bay Schools":hbsch_dat,
+						"Rivers":hbrivers_dat,
+						"Roads":hbroads_dat,
+						"Agricultural Potential Areas":hbagric_dat,
+						"Lake Victoria":lakes_dat,
+						"Soil Types":soils_dat,
+						"Protected Areas":hbprotect_dat,
+						
+					}
+
+				};
+
+
+				L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
+
+		    };
+		</script>
+
+		{% leaflet_map "gis" callback="initializeMap" %}
+</div>
+
+
+{% endblock content %}

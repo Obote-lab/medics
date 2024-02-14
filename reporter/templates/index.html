@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+{% load leaflet_tags %}
+<head>
+	{% leaflet_js %}
+	{% leaflet_css %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>mapping page</title>
+
+	<style type="text/css">
+		#gis{
+			width: 80%;
+			height: 570px;
+		}
+	</style>
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'leaflet-groupedlayer control/leaflet.groupedlayercontrol.min.css'% }"> -->
+	<script type="text/javascript" src="{% static 'dist/leaflet.ajax.js' %}"></script>
+	<!-- <script type="text/javascript" src="{% static 'leaflet-groupedlayer control/leaflet.groupedlayercontrol.min.js'% }"></script> -->
+
+	<!-- Leaflet.GroupedLayerControl CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.css"/>
+    <script src="https://unpkg.com/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.js"></script>
+
+    <!-- the links for building glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+	
+		<h2>We've A map</h2>
+		 
+		<script type="text/javascript">
+		    function initializeMap(map, options) {
+
+
+		    	var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+    			var openTopo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png');
+    			var esriWorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}');
+
+
+		        var county_dat = new L.GeoJSON.AJAX("{% url 'county' %}", {
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.county.toString());
+		        	}
+		        });
+
+		        var sample_dat = new L.GeoJSON.AJAX("{% url 'sample' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.name.toString());
+		        	}
+		        });
+		        var sub_dat = new L.GeoJSON.AJAX("{% url 'sub_county' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.name_3.toString());
+		        	}
+		        });
+		        var sch_dat = new L.GeoJSON.AJAX("{% url 'schools' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.name.toString());
+		        	}
+		        });
+
+		        var airports_dat = new L.GeoJSON.AJAX("{% url 'airports' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.name.toString())
+		        	}
+		        });
+
+		        var popu_dat = new L.GeoJSON.AJAX("{% url 'populated_regions' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.name.toString())
+		        	}
+		        });
+		        var waterways_dat = new L.GeoJSON.AJAX("{% url 'waterways' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.name.toString());
+		        	}
+		        });
+		        var hosi_dat = new L.GeoJSON.AJAX("{% url 'health_facilities' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.facility_n.toString());
+		        	}
+		        });
+
+		        var roads_dat = new L.GeoJSON.AJAX("{% url 'roads' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.name.toString())
+		        	}
+		        });
+		        var agric_dat = new L.GeoJSON.AJAX("{% url 'agricultural_areas' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.agricultur.toString())
+		        	}
+		        });
+		        var protect_dat = new L.GeoJSON.AJAX("{% url 'protected_areas' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.areaname.toString())
+		        	}
+		        });
+
+		        var wetlands_dat = new L.GeoJSON.AJAX("{% url 'wetlands' %}",{
+		        	onEachFeature: function(feature, layer){
+		        		layer.bindPopup(feature.properties.lccscode.toString())
+		        	}
+		        });
+
+				        county_dat.addTo(map);
+				        sample_dat.addTo(map);
+				        sub_dat.addTo(map);
+				        sch_dat.addTo(map);
+				        airports_dat.addTo(map);
+				        popu_dat.addTo(map);
+				        waterways_dat.addTo(map);
+				        hosi_dat.addTo(map);
+				        roads_dat.addTo(map);
+				        agric_dat.addTo(map);
+				        protect_dat.addTo(map);
+				        wetlands_dat.addTo(map);
+
+
+
+		        var baseLayers = {
+		        	"OSM":osm,
+		        	"OpenTopomap":openTopo,
+		        	"World_Imagery":esriWorldImagery
+
+		        }
+
+
+				var groupedOverlays = {
+					"Layers":{
+						"Counties":county_dat,
+						"Major Towns": sample_dat,
+						"Sub Counties":sub_dat,
+						"Kenyan Schools":sch_dat,
+						"Airports":airports_dat,
+						"Highly Populated Areas":popu_dat,
+						"Waterways":waterways_dat,
+						"Kenya Health Facilities":hosi_dat,
+						"Roads":roads_dat,
+						"Agricultural Areas":agric_dat,
+						"Protected Areas":protect_dat,
+						"Wetlands":wetlands_dat
+
+					}
+
+				};
+
+
+				L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
+
+		    };
+		</script>
+
+		{% leaflet_map "gis" callback="initializeMap" %}
+</body>
+</html>

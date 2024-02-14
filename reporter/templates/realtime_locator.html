@@ -1,0 +1,334 @@
+{% load leaflet_tags %}
+{% load static %}
+{% leaflet_js %}
+{% leaflet_css %}
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Leaflet.Markercluster CSS -->
+   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+
+
+
+
+   <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+<script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+   <!-- Leaflet.GroupedLayerControl css--> 
+   <link rel="stylesheet" href="https://unpkg.com/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.css" />
+
+   <!-- Routing machine -->
+   <script src="{%static 'leaflet-routing-machine-3.2.12/dist/leaflet-routing-machine.js' %}"></script>
+   <!-- minimap.css -->
+   <link rel="stylesheet" href="https://unpkg.com/leaflet-minimap/dist/Control.MiniMap.min.css">`
+
+    <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+   <!-- Leaflet AJAX JS -->
+    <script type="text/javascript" src="https://unpkg.com/leaflet-ajax/dist/leaflet.ajax.js"></script>
+
+    <!-- Leaflet.GroupedLayerControl JS -->
+    <script src="https://unpkg.com/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.js"></script>
+
+   <!-- Leaflet MiniMap plugin -->
+  
+   <script src="https://unpkg.com/leaflet-minimap/dist/Control.MiniMap.min.js"></script>
+
+   <!-- Leaflet.Markercluster JS -->
+   <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+
+    <!-- the links for building glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">
+        <span class="glyphicon glyphicon-globe custom-glyphicon"></span>Geo Blog
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class=
+      "collapse navbar-collapse" id="navbarToggle">
+        <ul class="navbar-nav mr-auto ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'blog-home' %}"><span class="glyphicon glyphicon-home"></span><br><br><br>   </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'streamlit_view' %}"><span class="glyphicon glyphicon-stats"></span> Statistical Analysis</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Homa Bay
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'homabay_map' %}"><i class="fas fa-map"></i> Homa_Bay Map</a>
+              <a class="dropdown-item" href="{% url 'Homabay_healthfacilities' %}"><span class="glyphicon glyphicon-plus-sign"></span> Health Facilities Distribution</a>
+              <a class="dropdown-item" href="{% url 'Homabay_roads' %}"><span class="glyphicon glyphicon-road"></span> Roads</a>
+              <a class="dropdown-item" href="{% url 'Homabay_subcounties' %}"><i class="fas fa-map"></i> Sub Counties</a>
+              <a class="dropdown-item" href="{% url 'Homabay_schools' %}"><i class="fas fa-school"></i> Schools</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'routes' %}">Nearest Health Facility</a>
+            </div>
+          </li>
+        </ul>
+    <ul class = "nav navbar-nav navbar-right ml-auto">
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
+            <span class="glyphicon glyphicon-search"></span>Search
+          </button>
+        </form>
+        <div class="navbar-nav ml-auto">
+          {% if user.is_authenticated %}
+            <a class="nav-item nav-link" href="{% url 'post-create' %}"><span class="glyphicon glyphicon-book"></span> New Post</a>
+            <a class="nav-item nav-link" href="{% url 'profile' %}"><span class="glyphicon glyphicon-user"></span> Profile</a>
+            <a class="nav-item nav-link" href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+            <a class="nav-item nav-link" href="{% url 'realtime_locator' %}"><span class="glyphicon glyphicon-map-marker"></span> GeoLocator</a>
+            <a class="nav-item nav-link" href="{% url 'home' %}"><span class="glyphicon glyphicon-plus"></span> Hospital management</a>
+          {% else %}
+            <a class="nav-item nav-link" href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+            <a class="nav-item nav-link" href="{% url 'register' %}"><span class="glyphicon glyphicon-edit"></span> Register</a>
+          {% endif %}
+        </div>
+    </ul>
+      </div>
+    </nav>
+
+      
+      
+    </header>
+
+    <main role="main" >
+        <div class="row">
+            <div class="col-md-9 mb-0, ml-0">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{message.tags}}">
+                            {{message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+               
+               <h1>Automatic Routing to the Nearest Health Facility</h1>
+
+               <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css">
+
+               <!-- Leaflet.GroupedLayerControl CSS and JS -->
+               <link rel="stylesheet" href="https://unpkg.com/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.css" />
+               <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+               <!-- Leaflet AJAX JS -->
+               <script type="text/javascript" src="https://unpkg.com/leaflet-ajax/dist/leaflet.ajax.js"></script>
+               <script src="https://unpkg.com/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.js"></script>
+                
+               <div id="map" style="width: 100%; height: 800px;"></div>
+
+               <script type="text/javascript">
+                  var map = L.map('map').setView([-0.649970, 34.505103],8);
+
+                   var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+                  var routingControl;  // Declare a variable to store the routing control instance
+                  var currentMarker;  // Declare a variable to store the current marker instance
+
+                  var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+                  var openTopo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png');
+                  var esriWorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}');
+
+                  var baseLayers = {
+                     "OSM": osm,
+                     "OpenTopomap": openTopo,
+                     "World_Imagery": esriWorldImagery
+                  };
+
+                  L.control.layers(baseLayers).addTo(map);
+
+                  // Add the red icon directly as an HTML element
+                  var redIcon = L.divIcon({
+                     className: 'custom-div-icon',
+                     html: '<div style="background-color: darkgreen; width: 20px; height: 20px; border-radius: 50%;"></div>',
+                     iconSize: [20, 20],
+                     iconAnchor: [10, 10],
+                     popupAnchor: [0, -10]
+                  });
+
+                  function findNearestHospital(lat, long) {
+                     // Remove previous routing control
+                     if (routingControl) {
+                        map.removeControl(routingControl);
+                     }
+
+                     // Remove previous markers
+                     if (currentMarker) {
+                        map.removeLayer(currentMarker);
+                     }
+
+                     // Add the current marker with the red icon
+                     currentMarker = L.marker([lat, long], { icon: redIcon }).addTo(map);
+
+                     fetch(`/get-nearest-healthfacility?latitude=${lat}&longitude=${long}`)
+                        .then(response => response.json())
+                        .then(result => {
+                           let hospital_coordinates = result.coordinates;
+
+                           // Display a route from user's location to the nearest hospital
+                           routingControl = L.Routing.control({
+                              waypoints: [
+                                 L.latLng(lat, long),
+                                 L.latLng(result.coordinates[0], result.coordinates[1])
+                              ],
+                              lineOptions: {
+                                 styles: [{ color: 'green', opacity: 0.9, weight: 5 }]
+                              },
+                              routeWhileDragging: true,  // Show the route while dragging the marker
+                              summaryTemplate: '<strong>{name}</strong><br>{distance}, {time}'
+                           }).addTo(map);
+
+                           // Check if the current marker is the nearest one
+                           if (result.distance === 0) {
+                              currentMarker.setIcon(redIcon);
+                           }
+
+                           // Replace facility_name with the actual variable or property containing the name of the nearest health facility
+                           var facility_name = "khvgbk"; // Replace with actual variable or property
+                           // Add a popup to the current marker with hospital name and distance
+                           currentMarker.bindPopup(`<p>${facility_name} is ${result.distance} km away.</p>`).openPopup();
+                        })
+                        .catch(error => console.error('Error:', error));
+                  }
+
+                  // Use geolocation API to get the current location
+                
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        var lat = position.coords.latitude;
+        var long = position.coords.longitude;
+        map.setView([lat, long], 14);
+
+        fetch(`/get-nearest-healthfacility?latitude=${lat}&longitude=${long}`)
+            .then(response => response.json())
+            .then(result => {
+                // Add a marker for the nearest hospital
+                let marker = L.marker([result.coordinates[0], result.coordinates[1]]).addTo(map);
+
+                // Add a popup with detailed information about the hospital
+                marker.bindPopup(
+                    `<b>Nearest Hospital</b><br>
+                    Distance: ${result.distance.toFixed(2)} km<br>
+                    Facility Name: ${result.facility_n}<br>
+                    Keph Level: ${result.Keph_level}<br>
+                    Facility Type: ${result.Facility_type}<br>
+                    Open Whole Day: ${result.Open_whole_day}<br>
+                    Open Late Night: ${result.Open_late_night}<br>
+                    Open Weekends: ${result.Open_weekends}<br>
+                    Open Public Holidays: ${result.Open_public_holidays}`
+                ).openPopup();
+
+                // Add a route from the current user's location to the nearest hospital
+                L.Routing.control({
+                    waypoints: [
+                        L.latLng(lat, long),
+                        L.latLng(result.coordinates[0], result.coordinates[1])
+                    ],
+                    lineOptions: {
+                        styles: [{ color: 'red', opacity: 0.9, weight: 5 }]
+                    },
+                    routeWhileDragging: true,
+                    summaryTemplate: '<strong>{name}</strong><br>{distance}, {time}'
+                }).addTo(map);
+            })
+            .catch(error => console.error('Error:', error));
+    }, function (error) {
+        console.error('Error getting geolocation:', error);
+    });
+} else {
+    console.log('Your browser doesn\'t support geolocation feature');
+}
+
+
+                  // vicinity map
+                     var basemapUrl = 'https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png';
+
+                     var basemap = new L.TileLayer(basemapUrl, { minZoom: 1, maxZoom: 19 });
+
+                     // Add minimap with custom size
+                     var miniMap = new L.Control.MiniMap(basemap, {
+                        width: 220,   // set the width of the minimap
+                        height: 120,  // set the height of the minimap
+                     }).addTo(map);
+
+               </script>
+
+               {% leaflet_map "map" callback="initializeMap" %}
+
+     
+            </div>
+            <div class="col-md-3">
+                <h3>Health Facilities Cluster Map</h3>
+            <div id="imagery-map" style="width: 100%; height: 85%;"></div>
+          <script>
+            const imageryMap = L.map("imagery-map").setView([-0.5350, 34.4531], 8);
+            const imagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}').addTo(imageryMap);
+
+            // Create a marker cluster group
+            var markers = L.markerClusterGroup();
+
+            var hbhosp_dat = new L.GeoJSON.AJAX("{% url 'Hb_Hosp' %}", {
+               onEachFeature: function (feature, layer) {
+                  layer.bindPopup(feature.properties.facility_n.toString());
+                  // Add each feature (layer) to the marker cluster group
+                  markers.addLayer(layer);
+               },
+               pointToLayer: function (feature, latlng) {
+                  // Create markers (but add them to the marker cluster group in onEachFeature)
+                  return L.marker(latlng);
+               }
+            });
+
+            // Add the marker cluster group to the map
+            imageryMap.addLayer(markers);
+
+            
+               var hbcounty_dat = new L.GeoJSON.AJAX("{% url 'Hb_County' %}", {
+                  style: function (feature) {
+                     return {
+                        color: 'red',  
+                        weight: 2,      
+                        fillOpacity: 0  
+                     };
+                  }
+               }).addTo(imageryMap);
+         </script>
+             {% leaflet_map "map" %} 
+                
+            </div>
+        </div>
+    </main>
+
+    
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,330 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+
+
+    <!-- the links for building glyphicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+    {% if title %}
+        <title> Django Blog - {{ title }}</title>
+    {% else %}
+        <title>H_Bay Medical Emergency</title>
+    {% endif %}
+
+
+
+    <style type="text/css">
+      .sidebar{
+        background-color:#fff;
+        min-height: 800px;
+      }
+      .main-content{
+        background-color: lavender;
+        min-height: 800px;
+      }
+      .sidebar-right{
+        background-color: lightcyan;
+        min-height: 400px;
+      }
+      .sidebar-left{
+        background-color: rgba(108, 231, 200,.5);
+        min-height: 300px;
+      }
+      .custom-icon {
+        color: aqua;
+    }
+    </style>
+
+
+
+</head>
+<body>
+
+    <div class="container-fluid">
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-2">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'blog-home' %}">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class=
+      "collapse navbar-collapse" id="navbarToggle">
+        <ul class="navbar-nav mr-auto ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'blog-home' %}"><span class="glyphicon glyphicon-home custom-icon"></span><br><br><br>   </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'streamlit_view' %}"><span class="glyphicon glyphicon-stats custom-icon"></span> Statistical Analysis</a>
+          </li>
+        <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Homa Bay
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{% url 'homabay_map' %}"><i class="fas fa-map"></i> Homa_Bay Map</a>
+                  <a class="dropdown-item" href="{% url 'Homabay_healthfacilities' %}"><span class="glyphicon glyphicon-plus-sign custom-icon"></span> Health Facilities Distribution</a>
+                  <a class="dropdown-item" href="{% url 'Homabay_roads' %}"><span class="glyphicon glyphicon-road custom-icon"></span> Roads</a>
+                  <a class="dropdown-item" href="{% url 'Homabay_subcounties' %}"><i class="fas fa-map custom-icon"></i> Sub Counties</a>
+                  <a class="dropdown-item" href="{% url 'Homabay_schools' %}"><i class="fas fa-school custom-icon"></i> Schools</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{% url 'routes' %}">Nearest Health Facility</a>
+              </div>
+          </li>
+
+        </ul>
+    <ul class = "nav navbar-nav navbar-right ml-auto">
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
+            <span class="glyphicon glyphicon-search custom-icon"></span>Search
+          </button>
+        </form>
+        <div class="navbar-nav ml-auto">
+          {% if user.is_authenticated %}
+            <a class="nav-item nav-link" href="{% url 'post-create' %}"><span class="glyphicon glyphicon-book custom-icon"></span> New Post</a>
+            <a class="nav-item nav-link" href="{% url 'profile' %}"><span class="glyphicon glyphicon-user custom-icon"></span> Profile</a>
+            <a class="nav-item nav-link" href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out custom-icon"></span> Logout</a>
+            <a class="nav-item nav-link" href="{% url 'realtime_locator' %}"><span class="glyphicon glyphicon-map-marker custom-icon"></span> GeoLocator</a>
+           <a class="nav-item nav-link" href="{% url 'home' %}">
+    <span class="glyphicon glyphicon-plus custom-icon"></span> Hospital management
+</a>
+
+
+          {% else %}
+            <a class="nav-item nav-link" href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in custom-icon"></span> Login</a>
+            <a class="nav-item nav-link" href="{% url 'register' %}"><span class="glyphicon glyphicon-edit custom-icon"></span> Register</a>
+          {% endif %}
+        </div>
+    </ul>
+      </div>
+          </div>
+        </nav>
+    </div>
+    </header>
+  <div class="container-fluid pt-5">
+	<div class="row">
+			<div class="col-md-8">
+				{% if messages %}
+					{% for message in messages %}
+						<div class="alert alert-{{message.tags}}">
+							{{message}}
+						</div>
+					{% endfor %}
+				{% endif %}
+				{% block content %} {% endblock %}
+			</div>
+
+                                 <!-- sidebar -->
+        <div class=" side-bar col-md-4">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="sidebar-right col-md-8">
+                  
+                  <a href="{% url 'homabay_map' %}" class="btn btn-info m-2">H/b Map</a>
+                  <a href="{% url 'blog-home' %}" class="btn btn-secondary m-2">H/b Blog</a>
+                  <a href="{% url 'Homabay_schools'%}" class="btn btn-success m-2">Schools</a>
+                  <a href="{% url 'Homabay_roads' %}" class="btn btn-danger m-2">Roads</a>
+                  <a href="{%  url 'Homabay_healthfacilities' %}" class="btn btn-warning m-2">Health facilities</a>  
+                  <button type="button" class="btn btn-link">Link</button>
+
+
+
+                  <div class="card">
+                    <video width="255" height="150"  loop autoplay muted>
+                    <source src="{% static 'vids/istockphoto-1368703207-640_adpp_is.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                  <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+
+              </div>
+              <div class="sidebar-left col-md-4">
+
+                <div class="container-fluid">
+                  <div class="spinner-border spinner-border-sm" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+
+
+                  <button class="btn btn-primary" type="button" disabled>
+                  <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+                  <span class="visually-hidden" role="status">Loading...</span>
+                </button>
+                <button class="btn btn-primary" type="button" disabled>
+                  <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+                  <span role="status">Loading...</span>
+                </button>
+                </div>
+              </div>
+
+          
+            </div>
+          </div>
+
+          <!-- bottom sidebar -->
+          <div class="container-fluid pt-2">
+            <div class=" long-button">
+              <div class="d-grid gap-2">
+                <a href="{% url 'login' %}" class="btn btn-success">Login To Your Account</a>
+              </div>
+              <!-- progress bar -->
+              <div class="container-fluid pt-2">
+                <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%"></div>
+                  <!-- <div class="progress-bar are" style="width: 75%">75%</div> -->
+
+              </div>
+              </div>
+                
+            </div>
+          </div>
+
+          <!-- most bottom side bar -->
+          <div class="container-fluid pt-2">
+            <div class="vids-info">
+              <div class="card">
+                  <video width="400" height="230"  loop autoplay muted>
+                <source src="{% static 'vids/istockphoto-479315795-640_adpp_is.mp4' %}" type="video/mp4">
+              Your browser does not support the video tag.
+                </video>
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+    </div>
+		</div>
+
+	 <!-- footer -->
+     <div class="container-fluid">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'blog-home' %}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{% url 'streamlit_view' %}">Statistical Analysis</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
+      </nav>
+      <div class="row">
+        <div class="col-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Level_1 Services</b></li>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="This top tooltip is themed via CSS variables.">
+                    Mandatory Requirements
+                </button>
+                <button type="button" class="btn btn-primary pt-1" data-bs-toggle="tooltip" data-bs-placement="top" title="This top tooltip is themed via CSS variables.">
+                    Services Offered
+                </button>
+                <button type="button" class="btn btn-info pt-1" data-bs-toggle="tooltip" data-bs-placement="top" title="This top tooltip is themed via CSS variables.">
+                    Custom tooltip
+                </button>
+                <button type="button" class="btn btn-warning pt-1" data-bs-toggle="tooltip" data-bs-placement="top" title="This top tooltip is themed via CSS variables.">
+                    Custom tooltip
+                </button>
+                <button type="button" class="btn btn-danger pt-1" data-bs-toggle="tooltip" data-bs-placement="top" title="This top tooltip is themed via CSS variables.">
+                    Custom tooltip
+                </button>
+                <button type="button" class="btn btn-success pt-1" data-bs-toggle="tooltip" data-bs-placement="top" title="This top tooltip is themed via CSS variables.">
+                    Custom tooltip
+                </button>
+            </ul>
+      </div>
+
+
+        <div class="col-2">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Level_2 Services</b></li>
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+          </ul> 
+        </div>
+        <div class="col-2">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Level_3 Services</b></li>
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+          </ul>
+        </div>
+            <div class="col-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Level_4 Services</b></li>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title='<a href="{% url "level4-services" %}">Services Offered</a>' data-bs-html="true">Mandatory Requirements</button>
+
+
+
+               <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title='<a href="{% url "level4-services" %}">Services Offered</a>' data-bs-html="true">Services Offered</button>
+
+
+                <button type="button" class="btn btn-info pt-1" data-bs-toggle="tooltip" data-bs-placement="top" title='<a href="{% url "level4-services" %}">Services Offered</a>' data-bs-html="true">Facility Infrustructure</button>
+
+
+                <button type="button" class="btn btn-warning pt-1" data-bs-toggle="tooltip" data-bs-placement="top" title='<a href="{% url "level4-services" %}">Services Offered</a>' data-bs-html="true">Administration Unit</button>
+
+                <button type="button" class="btn btn-danger pt-1" data-bs-toggle="tooltip" data-bs-placement="top" title='<a href="{% url "level4-services" %}">Services Offered</a>' data-bs-html="true">General</button>
+
+                <button type="button" class="btn btn-success pt-1" data-bs-toggle="tooltip" data-bs-placement="top" title='<a href="{% url "level4-services" %}">Services Offered</a>' data-bs-html="true">Personel</button>
+            </ul>
+      </div>
+         <div class="col-2">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Level_5 Services</b></li>
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+          </ul> 
+        </div>
+
+      </div>
+    </div>
+    <script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+    </script>
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+  </body>
+</html>

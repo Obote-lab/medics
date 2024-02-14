@@ -1,0 +1,29 @@
+{% extends "blog/services.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">
+                    Delete Post
+                </legend>
+                <h3>Are You Sure You Want to Delete This Post ({{object.title}})?</h3>
+            </fieldset>
+            <!-- Display image if available -->
+            {% if object.image %}
+                <img src="{{ object.image.url }}" alt="Post Image" class="img-fluid">
+            {% endif %}
+            <!-- Display video if available -->
+            {% if object.video %}
+                <video controls>
+                    <source src="{{ object.video.url }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            {% endif %}
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
+                <a class="btn btn-outline-secondary" href="{% url 'post-delete' object.id %}">Cancel</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
